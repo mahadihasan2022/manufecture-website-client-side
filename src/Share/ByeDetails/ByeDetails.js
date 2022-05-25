@@ -73,7 +73,7 @@ const ByeDetails = () => {
     
 
     return (
-        <div className='mt-20'>
+        <div className='m-10 details'>
         <div class="card w-96 bg-base-100 shadow-xl m-auto">
             <h1 className='text-balck text-center'>Product Details </h1>
             <figure><img src={img} alt="" /></figure>

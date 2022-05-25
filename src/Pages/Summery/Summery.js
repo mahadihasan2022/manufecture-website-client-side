@@ -3,16 +3,17 @@ import revenue from '../../images/revenue.svg';
 import tools from '../../images/tools.svg';
 import people from '../../images/people.svg';
 import feedback from '../../images/feedback.svg';
+import './Summery.css';
 
 const Summery = () => {
     return (
-        <div className='text-center mt-20 mb-28'>
-            <h1 className='text-4xl text-primary mb-2'>Billions Customers Trust us</h1>
-            <p className='text-secondary mb-4'>Customer satisfaction is our main priority</p>
+        <div className='summery text-center pb-12'>
+            <h1 className='text-4xl text-primary pb-2'>Billions Customers Trust us</h1>
+            <p className='text-secondary pb-4'>Customer satisfaction is our main priority</p>
 
-            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
+            <div className='grid sm:grid-cols-1 md:grid-cols-2 gap-4'>
 
-            <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+            <div className="card lg:max-w-lg bg-base-100 shadow-xl card">
             <figure className="px-5 pt-5">
               <img
                 src={revenue}
@@ -26,7 +27,7 @@ const Summery = () => {
             </div>
           </div>
 
-            <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+            <div className="card lg:max-w-lg bg-base-100 shadow-xl card">
             <figure className="px-5 pt-5">
               <img
                 src={tools}
@@ -40,7 +41,7 @@ const Summery = () => {
             </div>
           </div>
 
-            <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+            <div className="card lg:max-w-lg bg-base-100 shadow-xl card">
             <figure className="px-5 pt-5">
               <img
                 src={people}
@@ -54,7 +55,7 @@ const Summery = () => {
             </div>
           </div>
 
-            <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+            <div className="card lg:max-w-lg bg-base-100 shadow-xl card">
             <figure className="px-5 pt-5">
               <img
                 src={feedback}

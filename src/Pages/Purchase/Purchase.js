@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Item from '../../Component/Item/Item';
+import './Purchase.css';
 
 
 const Purchase = () => {
@@ -15,7 +16,7 @@ const Purchase = () => {
     },[])
 
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 mt-10 '>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 mt-10 purchase '>
         {
             products?.map(product=> <Item
             key={product.id}
