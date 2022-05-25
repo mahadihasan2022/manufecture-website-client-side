@@ -1,11 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Item.css';
 
 const Item = (props) => {
         // console.log(props.product);
-  const { product, showPurchase } = props;
-  const { name, img, price, minimumOrder, stock, details } = product;
+        const navigate = useNavigate();
+  const { product } = props;
+  const { _id, name, img, price, minimumOrder, stock, details } = product;
+
+
   // console.log(props);
+
+  const showPurchase = (id) =>{
+    navigate(`/tools/${id}`);
+    //  navigate(path);
+  }
     return (
         <div className="product sm:w-64 sm:h-64 ">
       <img src={img} alt=""></img>
@@ -16,7 +25,7 @@ const Item = (props) => {
         <p className="details">Minimum-Order:{minimumOrder}</p>
         <p className="details">Details:{details}</p>
       </div>
-      <button onClick={() => showPurchase ()} className="btn-cart">
+      <button onClick={() => showPurchase (_id)} className="btn-cart">
         <p className="btn-text"> Purchase</p>
         
       </button>

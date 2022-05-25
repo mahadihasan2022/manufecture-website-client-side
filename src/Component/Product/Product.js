@@ -4,7 +4,7 @@ import Item from '../Item/Item';
 
 const Product = () => {
     const [products, setProducts] = useState([]);
-    const navigate = useNavigate();
+    
   
     useEffect(() => {
       fetch("http://localhost:5000/tools")
@@ -13,10 +13,7 @@ const Product = () => {
     }, []);
   
     
-    const showPurchase = () =>{
-       const path = `/Purchase`;
-       navigate(path);
-    }
+   
     return (
         <div className="cont-cont">
         <div className="p-9">
@@ -27,7 +24,7 @@ const Product = () => {
                 <Item
                   key={product._id}
                   product={product}
-                  showPurchase={showPurchase}
+              
                 ></Item>
               ))}
             </div>
