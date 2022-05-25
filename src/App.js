@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Purchase from './Pages/Purchase/Purchase';
 import SingUp from './Pages/singUp/singUp';
+import Footer from './Share/Footer/Footer';
 import Header from './Share/Header/Header';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
        <Route path="/Login" element={<Login></Login>}></Route>
        <Route path="/singUp" element={<SingUp></SingUp>}></Route>
      </Routes>
+     <Footer></Footer>
     </div>
   );
 }
