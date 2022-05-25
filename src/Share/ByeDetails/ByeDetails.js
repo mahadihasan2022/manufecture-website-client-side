@@ -81,7 +81,7 @@ const ByeDetails = () => {
             <form onSubmit={handleBuy} className='grid grid-cols-1 gap-4 justify-items-center p-4'>
                 <h1 className='text-xl font-bold'>Name: {name}</h1>
                     <h3 className="font-bold text-lg text-center text-secondary">Booking for : {Id}</h3>
-                    <p>Details: {details}</p>
+                    <p className='font-semibold'>Details: {details}</p>
                     <input type="text" value={name} disabled  className="input input-bordered w-full max-w-xs" />
                     <input type="number" placeholder='Phone Number' required   className="from-input input input-bordered w-full max-w-xs" />
                     <input type="email"  name='email' disabled value={user?.email} className="from-input input input-bordered w-full max-w-xs" />
