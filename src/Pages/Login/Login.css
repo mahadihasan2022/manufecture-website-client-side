@@ -1,0 +1,17 @@
+.login-info{
+    background-color: rgb(240, 211, 172);
+}
+.form-info-email{
+    border: 1px solid black;
+}
+.form-info-pass{
+    border: 1px solid black;
+}
+.submit{
+    border: 1px solid black;
+    background-color: rgb(197, 130, 82);
+    border-radius: 5px;
+}
+.form-link{
+    color: rgb(145, 186, 105);
+}
