@@ -1,6 +1,7 @@
 import { onAuthStateChanged } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import auth from './firebase.init';
 import AddReview from './Pages/AddReview/AddReview';
@@ -15,6 +16,7 @@ import Summery from './Pages/Summery/Summery';
 import ByeDetails from './Share/ByeDetails/ByeDetails';
 import Footer from './Share/Footer/Footer';
 import Header from './Share/Header/Header';
+import Admin from './Share/Admin/Admin';
 
 export const UserDataProvider = createContext();
 
@@ -49,6 +51,7 @@ console.log(user);
        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
        <Route path="/MyPortfolio" element={<MyPortfolio></MyPortfolio>}></Route>
        <Route path="/AddReview" element={<AddReview></AddReview>}></Route>
+       <Route path="/Admin" element={<Admin></Admin>}></Route>
        <Route path="/MyProfile" element={<MyProfile></MyProfile>}></Route>
        <Route path="/Login" element={<Login></Login>}></Route>
        <Route path="/singUp" element={<SingUp></SingUp>}></Route>
