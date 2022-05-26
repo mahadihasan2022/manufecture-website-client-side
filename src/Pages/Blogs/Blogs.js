@@ -1,5 +1,5 @@
 import React from "react";
-import './Blogs.css';
+import "./Blogs.css";
 
 const Blogs = () => {
   return (
@@ -59,7 +59,9 @@ const Blogs = () => {
         </p>
       </div>
       <div>
-        <h1 className="text-2xl font-bold p-4">What is a unit test? Why should write unit tests?</h1>
+        <h1 className="text-2xl font-bold p-4">
+          What is a unit test? Why should write unit tests?
+        </h1>
         <p className="text-sm font-semibold p-4">
           The main objective of unit testing is to isolate written code to test
           and determine if it works as intended. Unit testing is an important

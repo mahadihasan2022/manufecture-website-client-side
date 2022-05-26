@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
@@ -6,7 +6,6 @@ import { signOut } from "firebase/auth";
 
 const Header = () => {
   const [user] = useAuthState(auth);
- 
 
   const handleSignOut = () => {
     signOut(auth);
@@ -111,29 +110,51 @@ const Header = () => {
                 Sing Up
               </Link>
             </li>
-            {user ?(
-                   <li>
-          
-                   <Link to = "DashBoard" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                    DashBoard
-                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-                   </Link>
-                   <ul class="p-2 bg-base-100">
-                     <li><Link to="myOrder" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">My Order</Link></li>
-                     <li><Link to="addReview" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Add Review</Link></li>
-                     <li><Link to="myProfile" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">My Profile</Link></li>
-                   </ul>
-                 </li>
-            ):(
-              <Link to ="/DashBoard"></Link>
+            {user ? (
+              <li>
+                <Link
+                  to="DashBoard"
+                  className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  DashBoard
+                </Link>
+                <ul class="p-2 bg-base-100">
+                  <li>
+                    <Link
+                      to="myOrder"
+                      className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    >
+                      My Order
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="addReview"
+                      className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    >
+                      Add Review
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="myProfile"
+                      className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    >
+                      My Profile
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+            ) : (
+              <Link to="/DashBoard"></Link>
             )}
             {user ? (
-            <button className="text-white font-bold" onClick={handleSignOut}>
-              Sign out
-            </button>
-          ) : (
-            <Link to="/login">Login</Link>
-          )}
+              <button className="text-white font-bold" onClick={handleSignOut}>
+                Sign out
+              </button>
+            ) : (
+              <Link to="/login"></Link>
+            )}
           </ul>
         </div>
       </div>
