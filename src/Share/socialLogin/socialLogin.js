@@ -1,10 +1,10 @@
 import React from 'react';
-import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import './socialLogin.css';
 import Loading from '../../Component/Loading/Loading';
-
+import { GoogleAuthProvider,signInWithPopup, getAuth} from "firebase/auth";
+import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 
 const SocialLogin = () => {
@@ -14,12 +14,12 @@ const SocialLogin = () => {
     //  console.log(user?.user?.photoURL);
     //  http://localhost:5000/
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
-   
+
     const navigate = useNavigate();
-    
+
     let errorElement;
 
-    if(loading || loading1){
+    if (loading || loading1) {
         <Loading></Loading>
     }
 
@@ -30,17 +30,38 @@ const SocialLogin = () => {
     if (user || user1) {
         navigate('/Home');
     }
+    const handlerSignInWithGoogle = () => {
+        const auth = getAuth();
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                console.log(result);
+                fetch(`http://localhost:5000/user/${result?.user?.email}`, {
+                    method: 'PUT',
+                    body: JSON.stringify({name: result?.user?.displayName, email: result?.user?.email, image: result?.user?.photoURL}),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(res=> res.json())
+                .then(data => {
+                    navigate('/Home');
+                })
+            }).catch((error) => {
+            });
+
+    }
     return (
         <div>
-             <div>
-            <div className=''>
-                <button
-                    onClick={() => signInWithGoogle()}
-                    className='btn-google w-40 h-12'>
-                    Googlea
-                </button>
+            <div>
+                <div className=''>
+                    <button
+                        onClick={() => handlerSignInWithGoogle()}
+                        className='btn-google w-40 h-12'>
+                        Google
+                    </button>
+                </div>
             </div>
-        </div>
         </div>
     );
 };

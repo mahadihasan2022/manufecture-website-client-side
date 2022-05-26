@@ -7,14 +7,14 @@ import './ByeDetails.css';
 
 const ByeDetails = () => {
     const { Id } = useParams();
-    console.log(Id);
+    // console.log(Id);
     const [services, setServices] = useState({});
     const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
     const [user] = useAuthState(auth);
     // console.log(user);
     // const {_id,name} = services;
-    console.log(services);
+    // console.log(services);
     const { _id, name, price, details, img, minimumOrder, stock } = services;
 
     useEffect(() => {
@@ -36,11 +36,11 @@ const ByeDetails = () => {
       
         const minimum = e?.target?.minimums?.value;
         const order = e?.target?.order?.value;
-        console.log(error);
+        // console.log(error);
         if(minimum >= order){
             return setError('you have should lower from minimum');
         }else{
-            console.log(minimum, order);
+            // console.log(minimum, order);
         // const booking = {
         //     treatmentId: _id,
         //     product: name,
