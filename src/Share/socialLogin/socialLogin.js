@@ -9,7 +9,12 @@ import Loading from '../../Component/Loading/Loading';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    // console.log(user?.user?.email);
+    // console.log(user?.user?.displayName);
+    //  console.log(user?.user?.photoURL);
+    //  http://localhost:5000/
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
+   
     const navigate = useNavigate();
     
     let errorElement;
@@ -32,7 +37,7 @@ const SocialLogin = () => {
                 <button
                     onClick={() => signInWithGoogle()}
                     className='btn-google w-40 h-12'>
-                    Google
+                    Googlea
                 </button>
             </div>
         </div>

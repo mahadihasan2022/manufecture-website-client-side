@@ -3,6 +3,7 @@ import './App.css';
 import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Purchase from './Pages/Purchase/Purchase';
 import SingUp from './Pages/singUp/singUp';
 import Summery from './Pages/Summery/Summery';
@@ -21,6 +22,7 @@ function App() {
        <Route path="/tools/:Id" element={<ByeDetails></ByeDetails>}></Route>
        <Route path="/summery" element={<Summery></Summery>}></Route>
        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+       <Route path="/MyPortfolio" element={<MyPortfolio></MyPortfolio>}></Route>
        <Route path="/Login" element={<Login></Login>}></Route>
        <Route path="/singUp" element={<SingUp></SingUp>}></Route>
      </Routes>
